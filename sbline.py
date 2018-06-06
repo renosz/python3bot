@@ -23,8 +23,8 @@ nadyaProfile = nadya.getProfile()
 lineSettings = nadya.getSettings()
 oepoll = OEPoll(nadya)
 #==============================================================================#
-readOpen = codecs.open("read.json","r","utf-8")
-settingsOpen = codecs.open("temp.json","r","utf-8")
+readOpen = codecs.open("python3bot/read.json","r","utf-8")
+settingsOpen = codecs.open("python3bot/temp.json","r","utf-8")
 
 read = json.load(readOpen)
 settings = json.load(settingsOpen)
@@ -50,10 +50,10 @@ def restartBot():
 def backupData():
     try:
         backup = settings
-        f = codecs.open('temp.json','w','utf-8')
+        f = codecs.open('python3bot/temp.json','w','utf-8')
         json.dump(backup, f, sort_keys=True, indent=4, ensure_ascii=False)
         backup = read
-        f = codecs.open('read.json','w','utf-8')
+        f = codecs.open('python3bot/read.json','w','utf-8')
         json.dump(backup, f, sort_keys=True, indent=4, ensure_ascii=False)
         return True
     except Exception as error:
